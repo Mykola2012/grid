@@ -1,0 +1,83 @@
+.storyStart::first-letter {
+  font-size: 30px;
+  color: red;
+}
+
+.line::first-line {
+  color: blue;
+}
+
+.styledText {
+  background-color: brown;
+}
+
+.styledText::selection {
+  color: orange;
+}
+
+.text > span::before {
+  content: "<<";
+}
+
+.text > span::after {
+  content: ">>";
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+}
+
+.navList a {
+  position: relative;
+  padding: 5px;
+  margin: 5px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.navList a::before,
+.navList a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 4px;
+  transition: width 1s;
+  background-color: blueviolet;
+}
+
+.navList a::before {
+  top: 0;
+  left: 0;
+}
+
+.navList a::after {
+  bottom: 0;
+  right: 0;
+}
+
+.navList a:hover:before,
+.navList a:hover::after {
+  width: 100%;
+}
+
+.userInfo {
+  width: 300px;
+  position: relative;
+  padding: 10px;
+}
+
+.userInfo:hover::before {
+  opacity: 75%;
+  transition: opacity 1s;
+}
+
+.userInfo::before {
+  content: "User tooltip";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 2px grey;
+  opacity: 0;
+}
